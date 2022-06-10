@@ -2,36 +2,21 @@ package Quesion_three;
  
 public class WrapperClassConvert 
 {
-
 	public static void main(String[] args) 
-	{
-		int num = 10;
-		System.out.println("After convertion : " + convertToWrapper(num));
+	{		    
+	    int a = 10;
+	    System.out.print("After conversion : " );
+	    convertToWrapper(a);
 	}
 
-	public static Object convertToWrapper(Object value)
+	private static void convertToWrapper(int a) 
 	{
+	    Integer aObj = Integer.valueOf(a);
 
-		Class valueClass = value.getClass();
+	    if(aObj instanceof Integer) 
+	    {
+	      System.out.println(aObj);
+	    }
 		
-		if (value == null || valueClass.isPrimitive())
-		{
-			System.out.println("Enter valid primitive as input");
-		}
-		
-		Integer temp_obj = Integer.valueOf((int) value);
-
-		if (temp_obj instanceof Integer) 
-		{
-			return temp_obj;
-		} 
-		
-		else 
-		{
-			System.out.println("Enter valid primitive as input");
-		}
-
-		return temp_obj;
-
 	}
 }
